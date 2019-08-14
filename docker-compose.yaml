@@ -9,12 +9,10 @@ services:
     working_dir: /usr/src/smart-brain-server
     environment: 
       POSTGRES_URI: postgres://maul:secret@postgres:5432/smart-brain-docker 
-    links: 
-      - postgres 
     ports:
       - "5000:5000"
     volumes:
-      - ./:/usr/src/smart-brain-api
+      - ./smart-brain-server:/usr/src/smart-brain-server
 
   # Postgres
   postgres:
