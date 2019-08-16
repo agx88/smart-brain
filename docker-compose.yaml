@@ -12,7 +12,7 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - ./smart-brain-server:/usr/src/smart-brain-server
+      - /d/Users/peppe/Workspace/smart-brain/smart-brain-server:/usr/src/smart-brain-server
 
   # Postgres
   postgres:
