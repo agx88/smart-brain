@@ -26,7 +26,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.get('/', (req, res) => res.send('it is working'))
-app.post('/signin', signin.handleSignin(db, bcrypt));
+app.post('/signin', signin.signinAuthentication(db, bcrypt));
 app.post('/register', register.handleRegister(db, bcrypt));
 app.get('/profile/:id', profile.handleProfileGet(db))
 app.post('/profile/:id/', (req, res) => {profile.handleProfileUpdate(req, res, db)})
