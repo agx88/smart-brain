@@ -8,11 +8,12 @@ services:
     command: npm start
     working_dir: /usr/src/smart-brain-server
     environment: 
-      POSTGRES_URI: postgres://maul:secret@postgres:5432/smart-brain-docker 
+      POSTGRES_URI: postgres://maul:secret@postgres:5432/smart-brain-docker
+      REDIS_URI: redis://redis:6379 
     ports:
       - "5000:5000"
     volumes:
-      - /d/Users/peppe/Workspace/smart-brain/smart-brain-server:/usr/src/smart-brain-server
+      - ./smart-brain-server:/usr/src/smart-brain-server
 
   # Postgres
   postgres:
@@ -25,4 +26,10 @@ services:
     container_name: postgres
     ports: 
       - "5432:5432"
+
+  # Redis
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
     

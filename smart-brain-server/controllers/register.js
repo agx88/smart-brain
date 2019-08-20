@@ -35,6 +35,8 @@ const handleRegister = (db, bcrypt) => (req, res) => {
         });
 }
 
+// NOTE: Do something similar to signinAuthentication when first registering
+
 module.exports = {
     handleRegister
 };
